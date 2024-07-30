@@ -2,10 +2,14 @@ export default function NavBar() {
   return (
     <nav className="w-full min-h-max col-start-1 col-end-2 grid grid-cols-[60%_1fr]">
       <div className="flex flex-row items-center gap-1 pl-2">
+        <button href="https://dev.to">
         <img
+        
           className="h-9 w-12 "
           src="https://media.dev.to/cdn-cgi/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
         />
+
+        </button>
         <input className="w-full border-[1px] p-1 border-gray-400" type="text" placeholder="Search..." />
       </div>
 
