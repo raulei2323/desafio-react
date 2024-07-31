@@ -1,4 +1,4 @@
-
+import { getPosts } from "@/api"
 
 
 export default function Feed(){

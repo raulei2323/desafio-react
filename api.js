@@ -14,3 +14,16 @@ export async function login(email, password) {
     const json = await response.json()
     return json.token
 }
+
+export async function getPosts() {
+    const token = localStorage.getItem("token");
+    const response = await fetch(`${API_URL}/post`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    const json = await response.json();
+  
+    return json.data.posts;
+  }
