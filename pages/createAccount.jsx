@@ -14,22 +14,21 @@ export default function CreateAccount() {
 
   async function onSubmit(data) {
     try {
-        const newAccount = await createAccount(data.profilePicture, data.firstName, data.lastName, data.birthDate, data.email, data.password)
-      if (newAccount ) {
-        toast.success('Account created ');
-        router.push('/');
-        return;
-      } else {
-        toast.error('Invalid data');
-        setError('root.credentials', {
-          type: 'manual',
-          message: 'Invalid data'
-        });
-      }
+      await createAccount({
+        profilePicture: data.profilePicture,
+        firstName: data.firstName,
+        email: data.email,
+        password: data.email,
+      })
+      toast.success('Logged in');
+        router.push("/")
+        return
+      
     } catch (error) {
       toast.error('Error al crear cuenta');
-      console.error('[createAccount error]', error);
+      console.error('[createAccount error]', error)
     }
+  
   }
 
   return (

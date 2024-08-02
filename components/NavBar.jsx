@@ -20,13 +20,13 @@ export default function NavBar() {
       <div className='grid grid-cols-4 '>
         <Link
           href='/login'
-          class='col-start-3 p-2 text-sky-600 cursor-pointer text-m hover:bg-pink-50 hover:underline hover:underline-offset-1'
+          className='col-start-3 p-2 text-sky-600 cursor-pointer text-m hover:bg-pink-50 hover:underline hover:underline-offset-1'
         >
           Log In
         </Link>
         <Link
           href='/createAccount'
-          class='col-start-4 p-0 m-1 text-sky-600 border-2 text-center border-sky-600 rounded-xl cursor-pointer hover:underline hover:bg-sky-600 hover:text-white'
+          className='col-start-4 p-0 m-1 text-sky-600 border-2 text-center border-sky-600 rounded-xl cursor-pointer hover:underline hover:bg-sky-600 hover:text-white'
         >
           Create account
         </Link>

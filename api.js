@@ -28,29 +28,29 @@ export async function getPosts() {
   return json.data.posts;
 }
 
-export async function createAccount(
-  profilePicture,
-  firstName,
-  lastName,
-  birthDate,
-  email,
-  password
-) {
-
-  const response = await fetch(`${API_URL}/users`, {
+// export function createAccount(newUser) {
+//   return fetch (`${API_URL}/users`, {
+//     method: 'POST',
+//     header: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       profilePicture: newUser.profilePicture,
+//       firstName: newUser.firstName,
+//       email: newUser.email,
+//       password: newUser.password,
+//     })
+//   });
+// }
+export function createAccount(userData) {
+  return fetch(`${API_URL}/users`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      profilePicture,
-      firstName,
-      lastName,
-      birthDate,
-      email,
-      password
+      profilePicture: userData.profilePicture,
+      firstName: userData.firstName,
+      email: userData.email,
+      password: userData.password,
     })
   });
-  const json = await response.json();
-  return json.user
 }
