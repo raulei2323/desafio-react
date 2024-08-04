@@ -1,4 +1,4 @@
-import { getPosts } from '@/api';
+import { getPosts } from '@/pages/api/api';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 

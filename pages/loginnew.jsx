@@ -39,10 +39,10 @@ export default function Login() {
       className='p-9 flex flex-col items-center '
     >
       <p className='p-5 w-1/3  flex flex-col items-center font-bold text-3xl'>
-        Join the DEV Community
+        Thanks for joining us!!!!!!
       </p>
       <p className='p-5 w-1/3 flex flex-col items-start'>
-        DEV community is a community of 1,710,931 amazing developers
+        Now login into your account
       </p>
       <p className='p-5 w-1/3 flex flex-col items-start'>Email</p>
       <input
