@@ -28,20 +28,6 @@ export async function getPosts() {
   return json.data.posts;
 }
 
-// export function createAccount(newUser) {
-//   return fetch (`${API_URL}/users`, {
-//     method: 'POST',
-//     header: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//       profilePicture: newUser.profilePicture,
-//       firstName: newUser.firstName,
-//       email: newUser.email,
-//       password: newUser.password,
-//     })
-//   });
-// }
 export function createAccount(userData) {
   return fetch(`${API_URL}/users`, {
     method: 'POST',
@@ -50,7 +36,23 @@ export function createAccount(userData) {
       profilePicture: userData.profilePicture,
       firstName: userData.firstName,
       email: userData.email,
-      password: userData.password,
+      password: userData.password
+    })
+  });
+}
+
+export function createPost(postData) {
+  const token = localStorage.getItem('token')
+  return fetch(`${API_URL}/post`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      title: postData.title,
+      hashtags: postData.title,
+      content: postData.content
     })
   });
 }
