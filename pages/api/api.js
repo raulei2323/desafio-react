@@ -47,12 +47,13 @@ export function createPost(postData) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`
+      authorization: `Bearer ${token}`
     },
     body: JSON.stringify({
       title: postData.title,
-      hashtags: postData.title,
-      content: postData.content
+      hashtags: postData.hashtags,
+      content: postData.content,
+      user: postData.user,
     })
   });
 }
